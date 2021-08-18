@@ -1,0 +1,17 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: "Albert stinks real bad" %>
+    <%= f.input :category, placeholder: "yh, its not human (out of 'chinese', 'italian', japanese, 'french' and 'belgian')" %>
+    <%= f.input :address, placeholder: "probably something serious" %>
+    <%= f.input :phone_number, placeholder: "must be something medical"%>
+
+    <%= f.submit "Add", class: "btn btn-secondary" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
